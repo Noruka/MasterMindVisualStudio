@@ -79,7 +79,7 @@ namespace MasterMind
         //Esta funcion comprueba el array del usuario y mira
         //si hay colores que existan en el array.
         //Si el color existe en alguna posición lo pondra en el
-        //panel correspondiente con un background blanco
+        //panel correspondiente con un background lila
         public void FBlanca(int[] codigo, int[] input, Panel[] resultado)
         {
             for (int i = 0; i < input.GetLength(0); i++)
@@ -88,7 +88,7 @@ namespace MasterMind
                 {
                     if (input[i] == codigo[j])
                     {
-                        resultado[i].BackColor = Color.White;
+                        resultado[i].BackColor = Color.Purple;
                     }
                 }
             }

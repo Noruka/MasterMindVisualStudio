@@ -41,7 +41,7 @@ namespace MasterMind
             codigoMastermind.RellenarArray(arrayMastermind);
 
             //Genera los paneles que muestran los colores
-            ///*Debugging*/GenerarPanelMastermind(panelMastermind);
+            /*Debugging*/GenerarPanelMastermind(panelMastermind);
             ///
             //Si Generas el panel Mastermind desactivar GenerarPanelJugador2
             GenerarPanelAciertos(panelAciertos);
@@ -49,36 +49,36 @@ namespace MasterMind
             GenerarPanelJugador2(panelJugador2);
 
 
-            //MostrarMastermind(arrayMastermind, panelMastermind);
+            MostrarMastermind(arrayMastermind, panelMastermind);
 
         }
 
-        //public void GenerarPanelMastermind(Panel[] panel)
-        //{
+        public void GenerarPanelMastermind(Panel[] panel)
+        {
 
-        //    for (int i = 0; i < panel.GetLength(0); i++)
-        //    {
-        //        panel[i] = new Panel();
-        //        panel[i].Left = 12 + (i * 56);
-        //        panel[i].Top = 250;
-        //        panel[i].Width = 50;
-        //        panel[i].Height = 50;
-        //        panel[i].BorderStyle = BorderStyle.FixedSingle;
+            for (int i = 0; i < panel.GetLength(0); i++)
+            {
+                panel[i] = new Panel();
+                panel[i].Left = 350 + (i * 56);
+                panel[i].Top = 275;
+                panel[i].Width = 50;
+                panel[i].Height = 50;
+                panel[i].BorderStyle = BorderStyle.FixedSingle;
 
-        //        this.Controls.Add(panel[i]);
-        //    }
+                this.Controls.Add(panel[i]);
+            }
 
-        //}
+        }
 
-        //public void MostrarMastermind(int[] codigo, Panel[] panel)
-        //{
+        public void MostrarMastermind(int[] codigo, Panel[] panel)
+        {
 
-        //    for (int i = 0; i < panel.GetLength(0); i++)
-        //    {
-        //        TraductorCodigoColor(panel, codigo, i);
-        //    }
+            for (int i = 0; i < panel.GetLength(0); i++)
+            {
+                TraductorCodigoColor(panel, codigo, i);
+            }
 
-        //}
+        }
         //Paneles que mantienen la ultima combinacion insertada
         public void GenerarPanelJugador2(Panel[] panel)
         {
@@ -87,7 +87,7 @@ namespace MasterMind
             {
                 panel[i] = new Panel();
                 panel[i].Left = 12 + (i * 56);
-                panel[i].Top = 250;
+                panel[i].Top = 150;
                 panel[i].Width = 50;
                 panel[i].Height = 50;
                 panel[i].BorderStyle = BorderStyle.FixedSingle;
@@ -118,7 +118,7 @@ namespace MasterMind
             {
                 panel[i] = new Panel();
                 panel[i].Left = 12 + (i * 56);
-                panel[i].Top = 150;
+                panel[i].Top = 250;
                 panel[i].Width = 50;
                 panel[i].Height = 50;
                 panel[i].BorderStyle = BorderStyle.FixedSingle;

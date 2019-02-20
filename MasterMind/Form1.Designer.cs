@@ -163,18 +163,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(321, 77);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(246, 13);
+            this.label6.Size = new System.Drawing.Size(268, 13);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Si el color coincide en la posicion, saldra \'f. Negra\'.";
+            this.label6.Text = "Si el color coincide en la posicion, saldra el color negro.";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(321, 90);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(341, 13);
+            this.label7.Size = new System.Drawing.Size(346, 13);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Si el color existe pero no esta en la posicion correcta, saldra \'f. Blanca\'.";
+            this.label7.Text = "Si el color existe pero no esta en la posicion correcta, saldra e color Lila.";
             // 
             // label8
             // 
@@ -210,9 +210,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 20);
+            this.label2.Size = new System.Drawing.Size(195, 20);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Codigo Insertado:";
+            this.label2.Text = "Anterior Codigo Insertado:";
             // 
             // btnSiguiente
             // 
@@ -240,9 +240,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(12, 221);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(199, 20);
+            this.label10.Size = new System.Drawing.Size(139, 20);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Anterior Codigo Insertado: ";
+            this.label10.Text = "Codigo Insertado: ";
             // 
             // Form1
             // 
@@ -270,7 +270,7 @@
             this.Controls.Add(this.btnNegro);
             this.Controls.Add(this.btnBlanco);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Mastermind";
             this.ResumeLayout(false);
             this.PerformLayout();
 
