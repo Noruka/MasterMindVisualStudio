@@ -45,11 +45,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.lbTurno = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBlanco
             // 
-            this.btnBlanco.Location = new System.Drawing.Point(341, 163);
+            this.btnBlanco.Location = new System.Drawing.Point(344, 165);
             this.btnBlanco.Name = "btnBlanco";
             this.btnBlanco.Size = new System.Drawing.Size(75, 50);
             this.btnBlanco.TabIndex = 0;
@@ -59,7 +62,7 @@
             // 
             // btnNegro
             // 
-            this.btnNegro.Location = new System.Drawing.Point(422, 163);
+            this.btnNegro.Location = new System.Drawing.Point(425, 165);
             this.btnNegro.Name = "btnNegro";
             this.btnNegro.Size = new System.Drawing.Size(75, 50);
             this.btnNegro.TabIndex = 1;
@@ -69,7 +72,7 @@
             // 
             // btnRosa
             // 
-            this.btnRosa.Location = new System.Drawing.Point(503, 163);
+            this.btnRosa.Location = new System.Drawing.Point(506, 165);
             this.btnRosa.Name = "btnRosa";
             this.btnRosa.Size = new System.Drawing.Size(75, 50);
             this.btnRosa.TabIndex = 2;
@@ -79,7 +82,7 @@
             // 
             // btnNaranja
             // 
-            this.btnNaranja.Location = new System.Drawing.Point(584, 163);
+            this.btnNaranja.Location = new System.Drawing.Point(587, 165);
             this.btnNaranja.Name = "btnNaranja";
             this.btnNaranja.Size = new System.Drawing.Size(75, 50);
             this.btnNaranja.TabIndex = 3;
@@ -89,7 +92,7 @@
             // 
             // btnRojo
             // 
-            this.btnRojo.Location = new System.Drawing.Point(341, 219);
+            this.btnRojo.Location = new System.Drawing.Point(344, 221);
             this.btnRojo.Name = "btnRojo";
             this.btnRojo.Size = new System.Drawing.Size(75, 50);
             this.btnRojo.TabIndex = 4;
@@ -99,7 +102,7 @@
             // 
             // btnAmarillo
             // 
-            this.btnAmarillo.Location = new System.Drawing.Point(422, 219);
+            this.btnAmarillo.Location = new System.Drawing.Point(425, 221);
             this.btnAmarillo.Name = "btnAmarillo";
             this.btnAmarillo.Size = new System.Drawing.Size(75, 50);
             this.btnAmarillo.TabIndex = 5;
@@ -109,7 +112,7 @@
             // 
             // btnVerde
             // 
-            this.btnVerde.Location = new System.Drawing.Point(503, 219);
+            this.btnVerde.Location = new System.Drawing.Point(506, 221);
             this.btnVerde.Name = "btnVerde";
             this.btnVerde.Size = new System.Drawing.Size(75, 50);
             this.btnVerde.TabIndex = 6;
@@ -119,7 +122,7 @@
             // 
             // btnAzul
             // 
-            this.btnAzul.Location = new System.Drawing.Point(584, 219);
+            this.btnAzul.Location = new System.Drawing.Point(587, 221);
             this.btnAzul.Name = "btnAzul";
             this.btnAzul.Size = new System.Drawing.Size(75, 50);
             this.btnAzul.TabIndex = 7;
@@ -207,15 +210,48 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 20);
+            this.label2.Size = new System.Drawing.Size(135, 20);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Ultimo Codigo Insertado:";
+            this.label2.Text = "Codigo Insertado:";
+            // 
+            // btnSiguiente
+            // 
+            this.btnSiguiente.Enabled = false;
+            this.btnSiguiente.Location = new System.Drawing.Point(425, 136);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(156, 23);
+            this.btnSiguiente.TabIndex = 18;
+            this.btnSiguiente.Text = "Siguiente Turno";
+            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // lbTurno
+            // 
+            this.lbTurno.AutoSize = true;
+            this.lbTurno.Location = new System.Drawing.Point(324, 136);
+            this.lbTurno.Name = "lbTurno";
+            this.lbTurno.Size = new System.Drawing.Size(47, 13);
+            this.lbTurno.TabIndex = 19;
+            this.lbTurno.Text = "Turno: 1";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 221);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(199, 20);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Anterior Codigo Insertado: ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 281);
+            this.ClientSize = new System.Drawing.Size(693, 334);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lbTurno);
+            this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
@@ -259,6 +295,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Label lbTurno;
+        private System.Windows.Forms.Label label10;
     }
 }
 
