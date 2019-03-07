@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MasterMind
@@ -16,22 +10,26 @@ namespace MasterMind
         //posArrayJugador actua como una i en un for y va recorriendo el
         //array de colores del jugador
         //turno simplemente hace un seguimiento de los turnos
-        int posArrayJugador = 0;
-        int turno = 1;
+        private int posArrayJugador = 0;
+
+        private int turno = 1;
 
         //El arrayMastermind es donde se guarda el codigo generado
         //El arrayJugador guarda el ultimo codigo que ha metido el jugador
-        int[] arrayMastermind = new int[5];
-        int[] arrayJugador = new int[5];
+        private int[] arrayMastermind = new int[5];
+
+        private int[] arrayJugador = new int[5];
 
         //Estos arrays son para crear los paneles
-        Panel[] panelMastermind = new Panel[5];
-        Panel[] panelJugador = new Panel[5];
-        Panel[] panelJugador2 = new Panel[5];
-        Panel[] panelAciertos = new Panel[5];
+        private Panel[] panelMastermind = new Panel[5];
+
+        private Panel[] panelJugador = new Panel[5];
+        private Panel[] panelJugador2 = new Panel[5];
+        private Panel[] panelAciertos = new Panel[5];
+
         //Creo el objeto del codigo mastermind para usar sus funciones y hacer un seguimiento del Score
         //que utilizo para saber si ha acertado todas las posiciones.
-        Codigo codigoMastermind = new Codigo();
+        private Codigo codigoMastermind = new Codigo();
 
         //Genero el form generando los paneles
         public Form1()
@@ -41,21 +39,16 @@ namespace MasterMind
             codigoMastermind.RellenarArray(arrayMastermind);
 
             //Genera los paneles que muestran los colores
-            /*Debugging*/GenerarPanelMastermind(panelMastermind);
-            ///
+            /*Debugging*///GenerarPanelMastermind(panelMastermind);
+            ///MostrarMastermind(arrayMastermind, panelMastermind);
             //Si Generas el panel Mastermind desactivar GenerarPanelJugador2
             GenerarPanelAciertos(panelAciertos);
             GenerarPanelJugador(panelJugador);
             GenerarPanelJugador2(panelJugador2);
-
-
-            MostrarMastermind(arrayMastermind, panelMastermind);
-
         }
 
         public void GenerarPanelMastermind(Panel[] panel)
         {
-
             for (int i = 0; i < panel.GetLength(0); i++)
             {
                 panel[i] = new Panel();
@@ -67,22 +60,19 @@ namespace MasterMind
 
                 this.Controls.Add(panel[i]);
             }
-
         }
 
         public void MostrarMastermind(int[] codigo, Panel[] panel)
         {
-
             for (int i = 0; i < panel.GetLength(0); i++)
             {
                 TraductorCodigoColor(panel, codigo, i);
             }
-
         }
+
         //Paneles que mantienen la ultima combinacion insertada
         public void GenerarPanelJugador2(Panel[] panel)
         {
-
             for (int i = 0; i < panel.GetLength(0); i++)
             {
                 panel[i] = new Panel();
@@ -93,12 +83,11 @@ namespace MasterMind
                 panel[i].BorderStyle = BorderStyle.FixedSingle;
                 this.Controls.Add(panel[i]);
             }
-
         }
+
         //Paneles que mantienen os aciertos de la jugada actual
         public void GenerarPanelAciertos(Panel[] panel)
         {
-
             for (int i = 0; i < panel.GetLength(0); i++)
             {
                 panel[i] = new Panel();
@@ -110,10 +99,10 @@ namespace MasterMind
                 this.Controls.Add(panel[i]);
             }
         }
+
         //Paneles que mantienen el codigo que va insertando el jugador
         public void GenerarPanelJugador(Panel[] panel)
         {
-
             for (int i = 0; i < panel.GetLength(0); i++)
             {
                 panel[i] = new Panel();
@@ -124,8 +113,8 @@ namespace MasterMind
                 panel[i].BorderStyle = BorderStyle.FixedSingle;
                 this.Controls.Add(panel[i]);
             }
-
         }
+
         //Conversor de numeros a colores
         //Recibe un numero representativo y ajusta el panel
         //Si el color no es valido devuelve el color gris
@@ -133,7 +122,6 @@ namespace MasterMind
         {
             switch (codigo[i])
             {
-
                 case 1:
                     panel[i].BackColor = Color.White; break;
                 case 2:
@@ -158,9 +146,8 @@ namespace MasterMind
         //Funcion que chequea los resultados y que controla el juego
         public void Post()
         {
-            if (posArrayJugador >= 5 && turno<=10)
+            if (posArrayJugador >= 5 && turno <= 10)
             {
-
                 for (int i = 0; i < panelAciertos.GetLength(0); i++)
                 {
                     panelAciertos[i].BackColor = Color.Empty;
@@ -181,7 +168,6 @@ namespace MasterMind
                 }
                 codigoMastermind.Score = 0;
             }
-            
         }
 
         //Cuando el usuario le da al boton siguiente se suma el turno, se resetea la posicion para volver a escribir en el array del jugador
@@ -211,6 +197,7 @@ namespace MasterMind
                 lbTurno.Text = "Turno: " + turno;
             }
         }
+
         //Simple funcion que habilita todos los botones
         public void EnableBotones()
         {
@@ -223,7 +210,7 @@ namespace MasterMind
             btnAzul.Enabled = true;
             btnAmarillo.Enabled = true;
         }
-        
+
         //Botones para que el usuario escriba el codigo
         //el if que hay dentro es para que no pueda pulsar mas botones que posiciones tiene el array del jugador
         //Escribe el color en el array del jugador para luego comprobarlo para poner las fichas blancas y negras

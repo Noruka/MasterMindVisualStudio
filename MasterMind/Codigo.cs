@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace MasterMind
 {
     public class Codigo
     {
-
         private int score;
         static private int contador = 0;
 
@@ -18,9 +13,7 @@ namespace MasterMind
 
         public Codigo()
         {
-
             this.Score = 0;
-
         }
 
         //Esta función la utilizo para generar un numero del 1 al 8
@@ -50,7 +43,6 @@ namespace MasterMind
                     temp1 = RandomGen();
                     for (int j = 0; j < codigoGenerado.GetLength(0); j++)
                     {
-
                         if (codigoGenerado[j] == temp1)
                         {
                             check = false;
@@ -68,7 +60,7 @@ namespace MasterMind
 
         //Ejecutar Funciones en orden
         //Esta función simplemente ejecuta las funciones de comprobación de resultados en orden.
-        
+
         public void EjecutarFunciones(int[] codigo, int[] jugadorInput, Panel[] resultado)
         {
             FBlanca(codigo, jugadorInput, resultado);
@@ -102,7 +94,6 @@ namespace MasterMind
         //panel correspondiente con un background negro y sumara el Score en 1
         public void FNegra(int[] codigo, int[] input, Panel[] resultado)
         {
-
             for (int i = 0; i < input.GetLength(0); i++)
             {
                 if (codigo[i] == input[i])
